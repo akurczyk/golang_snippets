@@ -3,35 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	// Pointers
-	var i, j int = 10, 20
-	var k, l *int = &i, &j
-
-	fmt.Println(i, j, *k, *l) // 10 20 10 20
-	fmt.Println(&i, &j, k, l) // <ptr> <ptr> <ptr> <ptr>
-	fmt.Println()
-
-	// Structs
-	type MyStruct struct {
-		A int
-		B float64
-		C string
-	}
-
-	var myInstance MyStruct
-	myInstance.A = 10
-	myInstance.B = 3.1415
-	myInstance.C = "Lorem ipsum"
-
-	var mySecondInstance MyStruct = MyStruct{20, 10.5, "Aaa"}
-
-	fmt.Println(myInstance)
-	fmt.Println(mySecondInstance)
-	fmt.Println(MyStruct{30, 12.3, "Bbb"})
-	fmt.Println(MyStruct{A: 40}) // B=0.0, C=""
-	fmt.Println()
-
-	// Arrays
 	var arr [10]int
 	arr[0] = 10
 	arr[1] = 20
@@ -47,12 +18,12 @@ func main() {
 	fmt.Println()
 
 	// Array slices
-	// Warning: Array slices are references to underlying array!
 	primes := [6]int{2, 3, 5, 7, 11, 13}
 	fmt.Println(primes[1:4])
 	fmt.Println(primes[1:])
 	fmt.Println(primes[:4])
 
+	// Warning: Array slices are references to underlying array!
 	a := primes[1:4]
 	a[0] = 10
 	a[1] = 20
@@ -66,8 +37,8 @@ func main() {
 	fmt.Println(allocated)
 
 	// Slices are higher level object based on underlying array. Underlying array can be reallocated to accommodate new
-	// values. In this case, a new slice based on a new array will be returned. Otherwise we will get a new slice based
-	// on the old array.
+	// values. In this case, a new slice based on a new array will be returned. Otherwise (if the array is long enough
+	// to accommodate new values) we will get a new slice based on the old array.
 	allocated = append(allocated, 123, 234, 345)
 	allocated = append(allocated, 123456)
 	fmt.Println(allocated)
@@ -79,6 +50,6 @@ func main() {
 		[]int{12, 22, 32, 42},
 		[]int{13, 23, 33, 43},
 	}
-	fmt.Println(matrix)
+	fmt.Println(matrix, matrix[0][0])
 	fmt.Println()
 }

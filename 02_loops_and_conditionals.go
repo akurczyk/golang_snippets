@@ -18,7 +18,7 @@ func main() {
 	}
 	fmt.Println()
 
-	// While truen and If
+	// While true and If
 	sum = 0
 	for {
 		fmt.Println(sum)
@@ -26,6 +26,13 @@ func main() {
 		if sum == 10 {
 			break
 		}
+	}
+	fmt.Println()
+
+	// Python-style for
+	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128} // See 03_pointers_and_structs.go...
+	for key, value := range pow {
+		fmt.Println(key, value)
 	}
 	fmt.Println()
 
