@@ -8,12 +8,14 @@ func main() {
 		return x + y
 	}
 	fmt.Println(myFunc(10, 20))
+	fmt.Println()
 
 	// Function in argument
 	myFunc2 := func(x, y int, fn func(int, int) int) int {
 		return fn(x, y)
 	}
 	fmt.Println(myFunc2(10, 20, myFunc))
+	fmt.Println()
 
 	// Function as return value
 	myFunc3 := func(a int, operation string) func(int, int) int {
@@ -42,5 +44,14 @@ func main() {
 	fmt.Println(myFunc3(10, "mul")(10, 10))
 	fmt.Println(myFunc3(10, "div")(10, 10))
 	fmt.Println(myFunc3(10, "mod")(5, 10))
+	fmt.Println()
+
+	// Variadic function
+	myVariadicFunction := func(nums ...int) {
+		for _, num := range(nums) {
+			fmt.Println(num)
+		}
+	}
+	myVariadicFunction(10, 20, 30, 40, 50)
 	fmt.Println()
 }

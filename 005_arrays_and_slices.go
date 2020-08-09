@@ -36,6 +36,9 @@ func main() {
 	allocated[1] = 20
 	fmt.Println(allocated)
 
+	copy(allocated[5:7], primes[0:2])
+	fmt.Println(allocated)
+
 	// Slices are higher level object based on underlying array. Underlying array can be reallocated to accommodate new
 	// values. In this case, a new slice based on a new array will be returned. Otherwise (if the array is long enough
 	// to accommodate new values) we will get a new slice based on the old array.

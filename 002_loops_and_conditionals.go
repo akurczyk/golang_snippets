@@ -30,7 +30,7 @@ func main() {
 	fmt.Println()
 
 	// Python-style for
-	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128} // See 03_pointers_and_structs.go...
+	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128} // See 005_arrays_and_slices.go...
 	for key, value := range pow {
 		fmt.Println(key, value)
 	}
@@ -39,6 +39,8 @@ func main() {
 	// If with a short statement
 	if a := 10; a < 20 {
 		fmt.Println(a)
+	} else {
+		fmt.Println(":-(")
 	}
 	fmt.Println()
 
@@ -68,6 +70,6 @@ func main() {
 }
 
 func deferExample() {
-	defer fmt.Println("World")
+	defer fmt.Println("World") // Defers are stacked and executed in LIFO order after the function returns
 	fmt.Println("Hello")
 }
