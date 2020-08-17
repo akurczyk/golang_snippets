@@ -22,10 +22,10 @@ func main() {
 	fmt.Println(x, y, z)
 
 	// Declare local variables and print them
-	var i int = 10
-	var f float64 = 20.5
+	var i = 10
+	var f = 20.5
 	var u uint = 30
-	var s string = "Lorem ipsum"
+	var s = "Lorem ipsum"
 
 	fmt.Println(i, f, u, s)
 	fmt.Println()
@@ -41,10 +41,10 @@ func main() {
 	fmt.Println()
 
 	// Convert types
-	var tmp_a int = 10
-	var tmp_b float64 = 3.1415
-	var tmp_c float64 = float64(tmp_a)
-	var tmp_d int = int(tmp_b)
+	var tmp_a = 10
+	var tmp_b = 3.1415
+	var tmp_c = float64(tmp_a)
+	var tmp_d = int(tmp_b)
 
 	fmt.Println(tmp_a, tmp_b, tmp_c, tmp_d)
 	fmt.Println()
@@ -64,21 +64,21 @@ func yet_another_func(x, y int) (s int) {
 }
 
 /*
-   Go types:
+Go types:
 
-   bool
+bool
 
-   string
+string
 
-   int  int8  int16  int32  int64
-   uint uint8 uint16 uint32 uint64 uintptr
+int  int8  int16  int32  int64
+uint uint8 uint16 uint32 uint64 uintptr
 
-   byte // alias for uint8
+byte // alias for uint8
 
-   rune // alias for int32
-        // represents a Unicode code point
+rune // alias for int32
+	// represents a Unicode code point
 
-   float32 float64
+float32 float64
 
-   complex64 complex128
- */
+complex64 complex128
+*/
